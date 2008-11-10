@@ -1,0 +1,13 @@
+ENTRY       G00147            Glycan
+NODE        5
+            1   Ino(acyl)-P     9    -2
+            2   GlcN       -2    -2
+            3   EtN        -8     2
+            4   P         -10     2
+            5   Man       -10    -2
+EDGE        4
+            1     2:a1    1:6  
+            2     5:a1    2:4  
+            3     4       3    
+            4     5:2     4    
+///

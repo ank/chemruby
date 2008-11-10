@@ -1,0 +1,33 @@
+ENTRY       G00001                      Glycan
+NAME        N-Acetyl-D-glucosaminyldiphosphodolichol
+COMPOSITION (GlcNAc)1 (PP-Dol)1
+MASS        203.2 (PP-Dol)
+COMPOUND    C04500
+REACTION    R05969 R05970
+PATHWAY     PATH: map00510 N-Glycan biosynthesis
+ENZYME      2.4.1.141       2.7.8.15
+DBLINKS     CCSD: 31775 36270 40495
+NODE        2
+            1   PP-Dol      3     0
+            2   GlcNAc     -4     0
+EDGE        1
+            1     2:a1    1    
+///
+ENTRY       G00002                      Glycan
+NAME        N,N'-Chitobiosyldiphosphodolichol
+COMPOSITION (GlcNAc)2 (PP-Dol)1
+MASS        406.4 (PP-Dol)
+COMPOUND    C04537
+REACTION    R05970 R05972
+PATHWAY     PATH: map00510 N-Glycan biosynthesis
+ENZYME      2.4.1.141       2.4.1.142
+DBLINKS     CCSD: 5719 6175 6765 23307 23312 29333 29581 29582 33645 40850 41794
+                  44423 45112
+NODE        3
+            1   PP-Dol      7     0
+            2   GlcNAc      0     0
+            3   GlcNAc     -8     0
+EDGE        2
+            1     2:a1    1    
+            2     3:b1    2:4  
+///

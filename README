@@ -1,0 +1,120 @@
+= ChemRuby - Cheminformatics Ruby
+
+ChemRuby is a framework for developing cheminformatics applications in Ruby.
+It will let you retrieve chemical information from variety of data sources
+in various formats (such as MDL mol, SMILES etc.), fast substructure search
+based on graph theory, draw a chemical structure in various graphics formats
+(such as PDF, PNG etc.), and calculate a number of chemical properties.
+
+== FOR MORE INFORMATION
+
+ChemRuby's official website is at ((<URL:http://www.chemruby.org/>)).
+You will find links to the related resouces including downloads,
+Wiki documentations etc. in the top page.
+
+  * ((<URL:http://www.chemruby.org/>))
+
+
+== WHERE TO OBTAIN
+
+--- WWW
+
+The releases can be obtained at ChemRuby website.
+
+  * ((<URL:http://www.chemruby.org/>))
+
+--- RubyGems
+
+((<RubyGems|URL:http://rubyforge.org/projects/rubygems/>)) version of
+the ChemRuby package is also available for easy installation.
+
+  * ((<URL:http://rubyforge.org/projects/chemruby/>))
+
+
+== REQUIREMENTS
+
+* Ruby 1.8.2 or later -- ((<URL:http://www.ruby-lang.org/>))
+
+
+== OPTIONAL REQUIREMENTS
+
+Some optional libraries can be utilized to extend ChemRuby's functionality.
+If your needs meets the following conditions, install them from the "Ruby
+Application Archive" at ((<URL:http://raa.ruby-lang.org/>)).
+
+For outputting png and jpeg images:
+
+  * [RAA:rmagick]
+
+For testing and developing ChemRuby:
+
+  * [RAA:rake]
+
+== INSTALL
+
+In the chemruby source directory (such as chemruby-x.x.x/), run setup.rb
+as follows:
+
+  % ruby setup.rb config
+  % ruby setup.rb setup
+  % su
+  # ruby setup.rb install
+
+If your operating system supports 'sudo' command (such as Mac OS X),
+try the following procedure instead of the above.
+
+  % ruby setup.rb config
+  % ruby setup.rb setup
+  % sudo ruby setup.rb install
+
+You can run tests by
+
+  % rake test
+
+and run
+
+  % rake
+
+for more details.
+
+== USAGE
+
+You can load all ChemRuby classes just by requiring 'chem.rb'.  All the
+ChemRuby classes and modules are located under the module name 'Chem' to
+separate the name space.
+
+  #!/usr/bin/env ruby
+  require 'chem'
+
+--- RubyGems
+
+In RubyGems, you need to load 'rubygems' library before using 'chem'.
+
+  #!/usr/bin/env ruby
+  require 'rubygems'
+  require_gem 'chem'
+
+== Credits
+
+* GOTO Naohisa, KATAYAMA Toshiaki and NAKAO Mitsuteru (alphabetical order)
+  who are developers of BioRuby, led the design of ChemRuby.
+
+* gSpan parser and PubChem search from KADOWAKI masashi.
+
+== LICENSE
+
+ChemRuby can be freely distributed under the Ruby's license.
+Note that, setup.rb included in the ChemRuby package comes from
+<RAA:setup> developed by Minero Aoki.
+
+License of This README file can be also distributed under the Ruby's license.
+
+  Copyright (C) 2006 TANAKA   Nobuya   <t@chemruby.org>
+                     KATAYAMA Toshiaki <k@bioruby.org>
+
+== CONTACT
+
+Current staffs of the ChemRuby project can be reached by sending e-mail
+to <staff@chemruby.org>.
+
+

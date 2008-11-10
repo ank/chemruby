@@ -1,0 +1,321 @@
+# Creation_Date:
+2005/6/27 0:34:27 GMT
+
+# Accession_No:
+EXPT03276
+
+# Generic_Name:
+(S)-3-(4-(2-Carbazol-9-Yl-Ethoxy)-Phenyl)-2-Ethoxy-Propionic Acid
+
+# Brand_Names/Synonyms:
+Not Available
+
+# Brand_Names_Mixture:
+Not Available
+
+# Chemical_IUPAC_Name:
+(S)-3-(4-(2-CARBAZOL-9-YL-ETHOXY)-PHENYL)-2-ETHOXY-PROPIONIC ACID
+
+# Chemical_Formula:
+C25H25N1O4
+
+# Chemical_Structure:
+YPA.png
+
+# CAS_Registry_Number:
+Not Available
+
+# InChI_Identifier:
+Not Available
+
+# KEGG_Compound_ID:
+Not Available
+
+# PubChem_Substance_ID:
+Not Available
+
+# PubChem_Compound_ID:
+Not Available
+
+# ChEBI_ID:
+Not Available
+
+# PharmGKB_ID:
+Not Available
+
+# HET_ID:
+YPA
+
+# SwissProt_ID:
+Not Available
+
+# GenBank_ID:
+Not Available
+
+# Drug_ID_Number_[DIN]:
+Not Available
+
+# RxList_Link:
+Not Available
+
+# FDA_Label:
+Not Available
+
+# MSDS_Material_Safety_Sheet:
+Not Available
+
+# Synthesis_Reference:
+Not Available
+
+# Molecular_Weight:
+403.477 g/mol
+
+# Melting_Point:
+Not Available
+
+# H2O_Solubility:
+Not Available
+
+# State:
+Solid
+
+# LogP:
+Not Available
+
+# Isoelectric_Point:
+Not Available
+
+# NMR_Spectrum:
+Not Available
+
+# Mass_Spectrum:
+Not Available
+
+# MOL_File_Image:
+YPA.mol
+
+# MOL_File_Text:
+YPA.mol
+
+# SDF_File_[Text]:
+YPA.sdf
+
+# PDB_File_Calculated_Image:
+YPA.pdb
+
+# PDB_File_Calculated_Text:
+YPA.txt
+
+# PDB_(Experimental)_ID:
+1KNU
+
+# PDB_File_Experimental_Image:
+Not Available
+
+# PDB_File_Experimental_Text:
+Not Available
+
+# Smiles_String:
+CCOC(Cc1ccc(OCC[n]2c3ccccc3c4ccccc24)cc1)C(O)=O
+
+# Drug_Type:
+Experimental Drug
+
+# Drug_Category:
+Peroxisome Proliferator Activated Receptor G inhibitor
+
+# Indication:
+Not Available
+
+# Pharmacology:
+Not Available
+
+# Mechanism_Of_Action:
+Not Available
+
+# Absorption:
+Not Available
+
+# Toxicity:
+Not Available
+
+# Protein_Binding_[%]:
+Not Available
+
+# Biotransformation:
+Not Available
+
+# Half_Life:
+Not Available
+
+# Dosage_Forms:
+Not Available
+
+# Patient_Information:
+Not Available
+
+# Interactions:
+Not Available
+
+# Contraindications:
+Not Available
+
+# Drug_Reference:
+Not Available
+
+# Organisms_Affected:
+Not Available
+
+# Phase_1_Metabolizing_Enzyme:
+Not Available
+
+# Phase_1_Metabolizing_Enzyme_Sequence:
+Not Available
+
+# Phase_1_Enzyme_SwissProt_ID:
+Not Available
+
+//
+
+# Drug_Target_1_Name:
+Peroxisome Proliferator Activated Receptor G - Macaca mulatta (Rhesus macaque)
+
+# Drug_Target_1_Gene_Name:
+PPARG
+
+# Drug_Target_1_Synonyms:
+Peroxisome proliferator activated receptor gamma; PPAR-gamma
+
+# Drug_Target_1_Protein_Sequence:
+>Peroxisome Proliferator Activated Receptor G - Macaca mulatta (Rhesus macaque)
+LNPESADLRALAKHLYDSYIKSFPLTKAKARAILTGKTTDKSPFVIYDMNSLMMGEDKIKFKHITPLQEQSKEVA
+IRIFQGCQFRSVEAVQEITEYAKSIPGFVNLDLNDQVTLLKYGVHEIIYTMLASLMNKDGVLISEGQGFMTREFL
+KSLRKPFGDFMEPKFEFAVKFNALELDDSDLAIFIAVIILSGDRPGLLNVKPIEDIQDNLLQALELQLKLNHPES
+SQLFAKLLQKMTDLRQIVTEHVQLLQVIKKTETDMSLHPLLQEIYKDLY
+
+# Drug_Target_1_Number_of_Residues:
+274
+
+# Drug_Target_1_Molecular_Weight:
+31284
+
+# Drug_Target_1_Theoretical_pI:
+5.98
+
+# Drug_Target_1_GO_Classification:
+>>>
+ Function: signal transducer activity
+Function: receptor activity
+Function: ligand-dependent nuclear receptor activity
+Function: steroid hormone receptor activity
+Function: binding
+Function: nucleic acid binding
+Function: transcription regulator activity
+Function: DNA binding
+Function: transcription factor activity
+ ||
+>>>
+ Process: physiological process
+Process: regulation of biological process
+Process: metabolism
+Process: regulation of physiological process
+Process: nucleobase, nucleoside, nucleotide and nucleic acid metabolism
+Process: regulation of metabolism
+Process: transcription
+Process: regulation of nucleobase, nucleoside, nucleotide and nucleic acid metabolism
+Process: transcription, DNA-dependent
+Process: regulation of transcription
+Process: regulation of transcription, DNA-dependent
+ ||
+>>>
+ Component: organelle
+Component: cell
+Component: intracellular organelle
+Component: membrane-bound organelle
+Component: intracellular
+Component: intracellular membrane-bound organelle
+Component: nucleus
+
+# Drug_Target_1_General_Function:
+Not Available
+
+# Drug_Target_1_Specific_Function:
+Receptor that binds peroxisome proliferators such as hypolipidemic drugs and fatty acids. Once activated by a ligand, the receptor binds to a promoter element in the gene for acyl-CoA oxidase and activates its transcription. It therefore controls the peroxisomal beta-oxidation pathway of fatty acids. Key regulator of adipocyte differentiation and glucose homeostasis
+
+# Drug_Target_1_Pathway:
+Not Available
+
+# Drug_Target_1_Reaction:
+Not Available
+
+# Drug_Target_1_Pfam_Domain_Function:
+PF00104:Hormone_recep
+PF00105:zf-C4
+
+# Drug_Target_1_Signals:
+None
+
+# Drug_Target_1_Transmembrane_Regions:
+None
+
+# Drug_Target_1_Essentiality:
+Not Available
+
+# Drug_Target_1_GenBank_ID_Protein:
+2645731
+
+# Drug_Target_1_SwissProt_ID:
+PPAT_MACMU (O18924)
+
+# Drug_Target_1_PDB_ID:
+1KNU
+
+# Drug_Target_1_ThreeD_Structure_Image:
+Not Available
+
+# Drug_Target_1_ThreeD_Structure_Text:
+Not Available
+
+# Drug_Target_1_Cellular_Location:
+Nuclear
+
+# Drug_Target_1_Gene_Sequence:
+>Peroxisome Proliferator Activated Receptor G - Macaca mulatta (Rhesus macaque), 1518 bp
+ATGGGTGAAACTCTGGGAGATTCTCCTATTGACCCAGAAAGCGATTCCTTCACTGATACACTGTCTGCAA
+ACATATCACAAGAAATTACCATGGTTGACACAGAGATGCCATTCTGGCCCACCAACTTTGGGATCAGCTC
+CGTGGATCTCTCCGTAATGGACGACCACTCCCACTCCTTTGACATCAAGCCCTTCACTACTGTTGACTTC
+TCCAGCATTTCTGCTCCACATTATGAAGACATTCCATTCACAAGAACAGATCCGATGGTTGCGGATTATA
+AGTATGACCTGAAACTTCAAGAGTACCAAAGTGCAATCAAAGTGGAGCCTGCTTCTCCACCTTATTATTC
+TGAGAAGACTCAGCTCTACAATAAGCCTCACGAAGAGCCTTCCAACTCCCTCATGGCAATCGAATGTCGT
+GTCTGCGGAGATAAAGCTTCTGGATTCCACTATGGAGTTCATGCTTGTGAAGGATGCAAGGGTTTCTTCC
+GGAGAACAATCAGATTGAAGCTTATCTATGACAGATGTGATCTTAACTGTCGGATCCACAAAAAAAGTAG
+AAATAAATGTCAGTACTGTCGGTTTCAGAAATGCCTTGCAGTGGGGATGTCTCATAATGCCATCAGGTTT
+GGGCGGATGCCACAAGCCGAGAAGGAGAAGCTGTTGGCGGAGATCTCCAGTGATATCGACCAGCTGAACC
+CAGAGTCCGCTGACCTCCGGGCCCTGGCAAAACATTTGTATGACTCATACATAAAGTCCTTCCCGCTGAC
+CAAAGCAAAGGCGAGGGCGATCTTGACAGGAAAGACAACAGACAAATCACCATTCGTTATCTATGACATG
+AATTCCTTAATGATGGGAGAAGATAAAATCAAGTTCAAACACATCACCCCACTGCAGGAGCAGAGCAAAG
+AGGTGGCCATCCGCATCTTTCAGGGCTGCCAGTTTCGCTCCGTGGAGGCTGTGCAGGAGATCACAGAGTA
+TGCCAAAAGCATTCCTGGTTTCGTAAATCTTGACTTGAACGACCAAGTAACTCTCCTCAAATATGGAGTC
+CATGAGATCATTTACACAATGCTGGCCTCCTTGATGAATAAAGATGGGGTTCTCATATCCGAGGGCCAAG
+GCTTCATGACAAGGGAATTTCTAAAGAGCCTGCGAAAGCCTTTTGGTGACTTTATGGAGCCCAAGTTTGA
+GTTTGCTGTGAAGTTCAATGCACTGGAATTAGATGACAGCGACTTGGCAATATTTATTGCTGTCATTATT
+CTCAGTGGAGATCGCCCAGGTTTGCTGAATGTGAAGCCCATTGAAGACATTCAAGACAACCTGCTACAAG
+CCCTGGAGCTCCAGCTGAAGCTGAACCACCCTGAGTCCTCGCAGCTGTTTGCCAAGCTGCTCCAGAAAAT
+GACAGACCTCAGACAGATTGTCACGGAACACGTGCAGCTACTGCAGGTGATCAAGAAGACGGAGACAGAC
+ATGAGTCTTCACCCGCTCCTGCAGGAGATCTACAAGGACTTGTACTAG
+
+# Drug_Target_1_GenBank_ID_Gene:
+AF033103
+
+# Drug_Target_1_Chromosome_Location:
+Not Applicable
+
+# Drug_Target_1_Locus:
+Not Applicable
+
+# Drug_Target_1_SNPs:
+Not Applicable
+
+# Drug_Target_1_References:
+9806316
+

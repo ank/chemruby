@@ -1,0 +1,53 @@
+
+class LinucsParser
+rule
+      linucs :
+             | linucs linuc EOL
+       linuc : node
+             | linuc node
+end
+
+---- inner
+
+def next_token
+  @q.shift
+end
+
+def parse( line )
+  @q = []
+  
+  line.strip!
+  until line.empty? do
+    case line
+    when /\A\[/
+      @q.push [:Ll, :Ll]
+    when /A\]/
+      @q.push [:Lr, :Lr]
+    when /\A\[([^\]]+)\]/
+      @q.push [:ATOM_SYMBOL, $&] # [m[1], m[2], m[3], m[4], m[5], m[6]]]
+    when /\A(Cl|C|F|H|N|O|Au|U)/
+      @q.push [:SYMBOL, $&.intern ]
+    when /\A[a-zA-Z_]/
+      @q.push [:SYMBOL, $&.intern ]
+    when /\A\d+/
+      @q.push [:NUMBER, $&.to_i ]
+    when /\\/
+      @q.push [:BSLASH, :BSLASH]
+    when /\A./
+      @q.push [$&, $&]
+    else
+      raise RuntimeError, 'must not happen'
+    end
+    line = $'
+  end
+  @q.push [ :EOL, nil ]
+  mol = Chem::SmilesMol.new
+  construct(mol, do_parse)
+  mol
+end
+
+
+---- footer
+
+
+

@@ -1,0 +1,205 @@
+#http://www.daylight.com/dayhtml/doc/theory/theory.smiles.html
+
+class SmilesParser
+rule
+      smiles :
+             | smiles smile EOL
+                 {
+                   return val[1]
+                 }
+       smile : node
+                 {
+                   result = val
+                 }
+             | smile node
+                 {
+                   result.push(val[1])
+                 }
+        node : atom_pos
+             | bond atom_pos
+                 {
+                   val[1].bond = val[0]
+                   result = val[1]
+                 }
+             | branch
+        atom : SYMBOL
+                 {
+                   node = Chem::SmilesAtom.new
+                   node.element = val[0][0]
+                   node.is_aromatic = val[0][1][:is_aromatic]
+                   result = node
+                 }
+             | ATOM_SYMBOL
+                 {
+                   m = /(\d*)([A-Za-z][a-z]?)(@*)(H\d*)?(\d*[+-]+)?/.match(val[0])
+#                   m = /(\d*)([A-Za-z][a-z]?)(@*)(H?\d*)(-?\d*)?/.match(val[0])
+                   node = Chem::SmilesAtom.new
+                   node.mass           = m[1].to_i
+                   node.element        = m[2].capitalize.intern
+                   node.is_aromatic    = (97 <= m[2][0]) #and 122 < $&[0]
+                   node.chiral         = m[3]
+
+                   if m[4] and not m[4] == ""
+                     hydrogen = /H(\d)+/.match(m[4])
+                     node.hydrogen_count = hydrogen ? hydrogen[1].to_i : 1
+                   end
+                   if m[5]
+                     charge = /(\d*)([+-]+)/.match(m[5])
+                     sign   = (charge[2][0..0] == "+") ? 1 : -1
+                     n      = charge[1] == "" ? charge[2].length : charge[1].to_i
+                     node.charge = sign * n
+                   end
+
+                   result              = node
+                 }
+    atom_pos : atom
+             | atom NUMBER # Ring 
+                 {
+                   val[0].smiles_pos = val[1].split("").collect{|c| c.to_i}
+                   result = val[0]
+                 }
+        bond : '-' # single bond
+             | '=' # double bond
+             | '#' # triple bond
+             | ':'
+             | '/'
+             | BSLASH
+             | '.' # zero bond
+      branch : '(' smile ')'
+                 { 
+                   result = val[1]
+                 }
+end
+
+
+#     atom : '[' <mass> symbol <chiral> <hcount> <sign<charge>> ']'
+#     bond :  <empty> | '-' | '=' | '#' | ':'
+#   branch : '(' <chain> ')'
+#          | '(' <chain> <branch> ')'
+#          | '(' <branch> <chain> ')'
+#          | '(' <chain> <branch> <chain> ')'
+#          ;
+
+---- inner
+
+def next_token
+  @q.shift
+end
+
+def construct mol, tree, prev = nil
+  tree.each do |node|
+    if node.instance_of?(Array)
+      construct(mol, node, prev)
+    else
+      mol.nodes.push(node)
+      mol.join(prev, node) if prev
+      if node.smiles_pos
+        node.smiles_pos.each do |sp|
+          if @ring[sp]
+            mol.join(node, @ring[sp])
+            # re-use ring closure digits
+            # Higher-numbered ring closures are not supported yet.
+            @ring[sp] = nil
+          else
+            @ring[sp] = node
+          end
+        end
+      end
+      prev = node
+    end
+  end
+end
+
+def initialize
+  super
+  @ring = []
+end
+
+def self.parse_smiles( smiles )
+  SmilesParser.new.parse( smiles)
+end
+
+ElementRegex   = Regexp.new('\A(Cl|Br|B|C|N|O|P|S|F|I|H)', Regexp::IGNORECASE)
+InorganicRegex = /\A\[([^\]]+)\]/
+NumberRegex    = /\A\d+/
+BackSlashRegex = /\\/
+OtherRegex     = /\A./
+
+def parse( line )
+  @q = []
+  
+  line.strip!
+  until line.empty? do
+    case line
+    when InorganicRegex
+      # [nH] : aromatic N-H
+      @q.push [:ATOM_SYMBOL, $&] # [m[1], m[2], m[3], m[4], m[5], m[6]]]
+    when ElementRegex
+      prop = {}
+      prop[:is_aromatic] = (97 <= $&[0]) #and 122 < $&[0]
+      @q.push [:SYMBOL, [$&.capitalize.intern , prop]]
+    when NumberRegex
+      @q.push [:NUMBER, $& ]
+    when BackSlashRegex
+      @q.push [:BSLASH, :BSLASH]
+    when OtherRegex
+      @q.push [$&, $&]
+    else
+      raise RuntimeError, 'must not happen'
+    end
+    line = $'
+  end
+  @q.push [ :EOL, nil ]
+  mol = Chem::SmilesMol.new
+  construct(mol, do_parse)
+  mol
+end
+
+---- footer
+
+module Chem
+  
+  class SmilesAtom
+    include Atom
+    attr_accessor :bond, :element, :element, :chiral, :hydrogen_count, :charge, :is_aromatic, :smiles_pos
+
+    def inspect
+      "{%s %s(%s)}" % [@bond, @element, smiles_pos ? smiles_pos.join("-") : ""]
+    end
+
+  end
+  
+  class SmilesBond
+    include Bond
+  end
+
+  class SmilesMol
+    
+    include Molecule
+    include Enumerable
+
+    attr_reader :nodes, :edges
+
+    def initialize
+      @nodes = []
+      @edges = []
+    end
+    
+    def join from, to
+      return if to.bond == '.'
+      bond = SmilesBond.new
+
+      bond.v = case to.bond
+               when '='
+                 2
+               when '#'
+                 3
+               else
+                 1
+               end
+      @edges.push([bond, from, to])
+    end
+
+  end
+
+end

@@ -1,0 +1,97 @@
+class IupacParser
+rule
+        name : prefix SKELETON POSTFIX EOL
+      prefix : 
+             |  prefix HYPHEN num_subs
+             |  prefix num_subs
+    num_subs : nums HYPHEN substituent
+             | substituent
+ substituent : SKELETON YL
+             | GREEK_NUM SKELETON YL
+        nums : NUMBER
+             | nums COMMA NUMBER
+end
+
+---- inner
+
+def next_token
+  @q.shift
+end
+
+def parse( line )
+  line.downcase!
+  @q = []
+  
+  until line.empty? do
+    case line
+    when /\A(hex|prop|meth|non|but|dec)/
+      @q.push([:SKELETON, $&])
+    when /\A(ane)/
+      @q.push([:POSTFIX, $&])
+    when /\Ayl/
+      @q.push([:YL, 'yl'])
+    when /\A(di|tri)/
+      @q.push([:GREEK_NUM, $&])
+    when /\A\d+/
+      @q.push([:NUMBER, $&.to_i])
+    when /\A-/
+      @q.push([:HYPHEN, '-'])
+    when /\A,/
+      @q.push([:COMMA, ','])
+    when /\A[()]/
+      @q.push([:ROUND_B, $&])
+    end
+    line = $'
+  end
+  @q.push([:EOL, nil])
+  do_parse
+end
+
+# class IupacParser
+# rule
+#        iupac : name EOF
+#                  {
+#                    puts 'The END'
+#                  }
+#         name : SKELETON POSTFIX
+#                  {
+#                    p val
+#                    result = val
+#                  }
+# end
+
+# ---- inner
+
+# def next_token
+#   @q.shift
+# end
+
+# def parse( line )
+#   @q = []
+  
+# #  line.strip
+#   until line.empty? do
+#     case line
+#     when /hex/# $reg_a_1_1
+#       @q.push [:SKELETON, $&]
+#     when /ane/# $reg_postfix
+#       @q.push [:POSTFIX, $&]
+#     when /\A\d+/
+#       @q.push [:NUMBER, $&.to_i ]
+#     when /\A./
+#       @q.push [$&, $&]
+#     else
+#       raise RuntimeError, 'must not happen'
+#     end
+#     line = $'
+#   end
+#   @q.push [ :EOL, nil ]
+#   p @q
+#   do_parse
+# end
+
+---- footer
+
+# parser = IupacParser.new
+
+# parser.parse("hexane")

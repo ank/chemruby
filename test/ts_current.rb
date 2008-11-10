@@ -1,0 +1,11 @@
+require 'test/unit'
+require 'test/all'
+require 'rubygems'
+
+# require 'test/tc_drugbank'
+# require 'test/tc_develop.rb'
+#require 'test/tc_kegg.rb'
+#require 'test/tc_pubchem.rb'
+require 'test/tc_openbabel'
+#require 'test/tc_cdk'
+#require 'test/tc_mdl.rb'

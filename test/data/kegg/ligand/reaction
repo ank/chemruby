@@ -1,0 +1,14 @@
+ENTRY       R00001                      Reaction
+NAME        Dummy reaction
+DEFINITION  DNA + RNA <=> ATP
+EQUATION    C00100 + C00001 <=> C10000
+RPAIR       A02000
+ENZYME      1.2.99.1
+///
+ENTRY       R00100                      Reaction
+NAME        Dummy reaction2
+DEFINITION  Undecane + Dodecane <=> Tridecane
+EQUATION    C00890 + C00001 <=> C02174 + C12100
+RPAIR       A03000
+ENZYME      3.6.1.-
+///
