@@ -2,11 +2,11 @@
 
 # Tests to ensure functionality
 
-require 'test/all'
-
-require 'test/type_test'
-require 'test/ctab_test'
-require 'test/coord_test'
+require 'all'
+require 'test/unit'
+require 'type_test'
+require 'ctab_test'
+require 'coord_test'
 
 require 'chem'
 

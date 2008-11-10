@@ -87,11 +87,11 @@ module Chem
 
       include Atom
 
-      def element ; @element ||= @line[53..60].split(".")[0].strip.intern ; end
-      def x       ; @x       ||= @line[16..27].to_f                       ; end
-      def y       ; @y       ||= @line[28..39].to_f                       ; end
-      def z       ; @z       ||= @line[40..51].to_f                       ; end
-      def initialize line ;      @line = line                             ; end
+      def element ; @element ||= @line.split(/\s+/)[2].strip; end
+      def x       ; @x       ||= @line.split(/\s+/)[3].to_f; end
+      def y       ; @y       ||= @line.split(/\s+/)[4].to_f; end
+      def z       ; @z       ||= @line.split(/\s+/)[5].to_f; end
+      def initialize line ;      @line = line; end
 
     end
 
@@ -101,10 +101,10 @@ module Chem
 
       attr_reader :b, :e
       def initialize line
-        # @line = line
-        @b = line[6..10].to_i
-        @e = line[11..15].to_i
-        @v = line[16..17].to_i
+        @line = line
+        @b = line.split(/\s+/)[2].to_i
+        @e = line.split(/\s+/)[3].to_i
+        @v = line.split(/\s+/)[4].to_i
       end
 
     end
